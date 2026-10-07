@@ -1,0 +1,243 @@
+:root {
+    --bg:#EDF1EF;
+    --card:#FAFCFB;
+    --ink:#14262B;
+    --mute:#566A6C;
+    --line:#CBD7D4;
+    --acc:#1F6F6B;
+    --acc-ink:#fff;
+    --arab:22px;
+    --tr:16px;
+
+    color-scheme:light;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px)
+    }
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg:#0F1A1C;
+        --card:#16252A;
+        --ink:#E4ECEA;
+        --mute:#93A8A8;
+        --line:#294047;
+        --acc:#6CC4BC;
+        --acc-ink:#0F1A1C;
+        color-scheme:dark}
+    }
+
+    /* ==================== Footer kredit ==================== */
+
+.credit {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.credit p {
+  margin: 0;
+  color: var(--mute);
+}
+
+.credit-nama {
+  font-size: 13px;
+}
+
+.credit-asal {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+/* pengaturan gelap atau terang */
+:root[data-theme="dark"] {
+    --bg:#0F1A1C;
+    --card:#16252A;
+    --ink:#E4ECEA;
+    --mute:#93A8A8;
+    --line:#294047;
+    --acc:#6CC4BC;
+    --acc-ink:#0F1A1C;
+    color-scheme:dark
+    }
+
+html {
+    scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)
+ }
+
+*,
+*:before,
+*:after {
+    box-sizing:inherit
+}
+
+body {
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Literata", Georgia, serif;
+    line-height:1.65
+}
+
+button {
+    font:inherit;
+    color:inherit;
+    cursor:pointer
+}
+
+button:focus-visible {
+    outline:2px solid var(--acc);
+    outline-offset:2px
+}
+
+header {
+    position:sticky;
+    top:env(safe-area-inset-top,0px);
+    z-index:5;
+    background:var(--bg);
+    border-bottom:1px solid var(--line)
+}
+
+.bar {
+    max-width:760px;
+    margin:0 auto;
+    padding:12px 16px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 16px;
+    align-items:center;
+    justify-content:space-between
+}
+
+h1 {
+    font-size:18px;
+    margin:0;
+    font-weight:600
+}
+
+.tabs {
+    display:flex;
+    gap:6px
+}
+
+.tab {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:transparent;
+    font-weight:600
+}
+
+.tab[aria-current="page"] {
+    background:var(--acc);
+    color:var(--acc-ink);
+    border-color:var(--acc)
+}
+
+/* teks judul diatas */
+.tools {
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap
+}
+
+/* teks tulisan dalam card */
+.tool {
+    height:36px;
+    padding:0 12px;
+    border-radius:18px;
+    border:1px solid var(--line);
+    background:transparent;
+    font-size:14px
+}
+
+.tool[aria-pressed="false"] {
+    color:var(--mute);
+    text-decoration:line-through
+}
+
+main {
+    max-width:760px;
+    margin:0 auto;
+    padding:20px 16px 48px
+}
+
+h2 {
+    font-size:15px;
+    color:var(--mute);
+    font-weight:400;
+    margin:4px 0 16px
+}
+
+.doa {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 18px 14px;
+    margin-bottom:14px
+}
+
+.doa h3 {
+    margin:0 0 12px;
+    font-size:16px;
+    font-weight:600;
+    color:var(--acc)
+}
+
+.ar  {
+    font-family:"Amiri","Scheherazade New","Traditional Arabic",serif;
+    font-size:var(--arab);
+    line-height:2.1;
+    direction:rtl;
+    text-align:right;
+    margin:0
+}
+
+.tr {
+    font-size:var(--tr);
+    color:var(--mute);
+    margin:12px 0 0;
+    padding-top:12px;
+    border-top:1px solid var(--line)
+}
+
+.hide-tr .tr {display:none}
+
+.note {
+    font-size:13px;
+    color:var(--mute);
+    margin:8px 0 0
+}
+
+.cp {
+    margin-top:10px;
+    height:34px;
+    padding:0 14px;
+    border-radius:17px;
+    border:1px solid var(--line);
+    background:transparent;
+    font-size:14px
+}
+
+.pager {
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:24px
+}
+
+.pager button {
+    height:44px;
+    padding:0 18px;
+    border-radius:22px;
+    border:1px solid var(--acc);
+    background:transparent;
+    color:var(--acc)
+}
+
+.pager button:disabled {visibility:hidden}
+
+.pesan {color:var(--mute)}
